@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campaigns</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <body>
+    <button id="connectButton">Connect</button>
+
+    <% keys.forEach((key)=>{%>
+      <div>
+        <h3><%=key %></h3>
+        <button data-id="<%=key %>" class="balance">getBalance</button>
+        <button data-id="<%=key %>" class="withdraw">Withdraw</button>
+        <button data-id="<%=key %>" class="getOwner">Get Owner</button>
+        
+        <!-- <form> -->
+        <form data-id="<%=key %>" class="fund" onsubmit="return false">
+          <label for="ethAmount">ETH Amount</label>
+          <input id="<%=key %>" class="ethAmount" placeholder="0.1" />
+          <input type="submit" value="Fund">
+        </form>
+        <!-- </form> -->
+      </div>
+    <%});%>
+  </body>
+  <script src="static/campaign.js" type="module"></script>
+</html>
